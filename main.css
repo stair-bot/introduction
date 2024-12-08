@@ -1,0 +1,392 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #e0e0e0;
+    background-color: #1c1c1c;
+    line-height: 1.6;
+    /* overflow: hidden; */
+}
+
+
+header, .features, .gallery, .contact {
+    scroll-snap-align: start;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    position: relative;
+    background-image: linear-gradient(135deg, #ff6f00, #ffd600, #00c853, #1e88e5, #8e24aa, #ff6f00);
+    background-size: 300% 300%;
+    animation: gradientMove 6s infinite linear;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0) 70%);
+    z-index: 0;
+}
+
+.header .logo {
+    width: 200px;
+    height: auto;
+    margin-bottom: 0.5vh;
+    position: relative;
+    z-index: 1;
+}
+
+.header .brand {
+    font-size: 6rem;
+    margin: 0;
+    font-weight: bold;
+    color: #000000;
+    position: relative;
+    z-index: 1;
+}
+
+.header .tagline {
+    font-size: 3rem;
+    margin-top: 1rem;
+    color: #0000007d;
+    position: relative;
+    z-index: 1;
+}
+
+/* Intro Section */
+.intro {
+    background-color: #212121;
+    padding: 0;
+    text-align: center;
+    color: #e0e0e0;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #f9a825;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    margin: 0 auto;
+    max-width: 800px;
+    color: #bdbdbd;
+}
+
+/* Features Section */
+.features {
+    position: relative; /* 为了放置遮罩层 */
+    background-image: url('images/feature-bk.jpg'); /* 替换为你的背景图片路径 */
+    background-size: cover; /* 背景图片覆盖 */
+    background-position: center; /* 图片居中 */
+    padding: 4rem 0; /* 上下内边距 */
+    min-height: 100vh; /* 占据整个页面高度 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3rem;
+    color: #e0e0e0; /* 保证文字清晰 */
+}
+
+/* 白色半透明遮罩层 */
+.features::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1; /* 遮罩层在背景图之上 */
+}
+
+/* 标题和内容的层级调整 */
+.features h2,
+.feature-grid {
+    position: relative;
+    z-index: 2; /* 确保内容在遮罩层之上 */
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: #f9a825;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #424242;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.6);
+}
+
+.feature img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #f9a825;
+}
+
+.feature p {
+    color: #bdbdbd;
+}
+
+/* Gallery Section */
+/* Gallery Section with Background Image and Overlay */
+.gallery {
+    position: relative; /* 为了放置遮罩层 */
+    background-image: url('./images/header-bg.jpg'); /* 替换为你的背景图片路径 */
+    background-size: cover; /* 确保背景图片覆盖整个容器 */
+    background-position: center; /* 图片居中显示 */
+    padding: 3rem 0; /* 原始的上下内边距 */
+    min-height: 100vh; /* 占据整个页面高度 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3rem;
+    color: #e0e0e0; /* 确保文字在背景上清晰可见 */
+}
+
+/* 白色半透明遮罩层 */
+.gallery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(129, 129, 129, 0.5); /* 50%透明的白色 */
+    z-index: 1; /* 确保遮罩层在背景图上方 */
+}
+
+/* 调整标题和网格的层级 */
+.gallery h2,
+.gallery-grid {
+    position: relative;
+    z-index: 2; /* 确保内容在遮罩层上方 */
+}
+
+
+.gallery h2 {
+    text-align: center;
+    vertical-align: top;
+    font-size: 5rem; /* 增加标题字体大小 */
+    margin-top: 2rem; /* 设置标题距离顶部的间距 */
+    margin-bottom: 3rem; /* 增加标题与内容之间的间距 */
+    color: #d4ccbd;
+}
+
+.gallery-grid {
+    display: grid; /* 使用网格布局 */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 响应式列宽 */
+    gap: 1rem; /* 增加网格项之间的间距 */
+    width: 100%; /* 调整宽度以适应屏幕 */
+    max-width: 1200px; /* 限制最大宽度 */
+    margin-top: 9rem; /* 向下推内容 */
+    margin-bottom: 2rem; /* 增加内容底部的间距 */
+    justify-items: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+.gallery-grid img {
+    width: 100%; /* 图片自适应宽度 */
+    height: auto;
+    max-width: 300px; /* 限制最大宽度 */
+    border-radius: 10px; /* 圆角效果 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* 增加阴影 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 添加平滑过渡 */
+    cursor: pointer; /* 鼠标悬停变成手势 */
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05); /* 鼠标悬停放大 */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.6); /* 鼠标悬停增强阴影 */
+}
+
+
+
+/* Contact Section */
+.contact {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 4rem 0;
+    text-align: center;
+    min-height: 70vh;
+}
+
+.contact h2 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    color: #f9a825;
+}
+
+.contact p {
+    font-size: 1.2rem;
+    color: #bdbdbd;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    text-align: left;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #e0e0e0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #424242;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: #f9a825;
+    color: #1c1c1c;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #ffd600;
+}
+
+.contact-form button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
+}
+
+.contact-form button:active::after {
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+}
+
+/* Footer */
+.footer {
+    background-color: #212121;
+    color: #bdbdbd;
+    text-align: center;
+    padding: 2rem 0;
+    min-height: 20vh;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+a, .mail-direction {
+    text-decoration: none;
+    color: #f9a825;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
