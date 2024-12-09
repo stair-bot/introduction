@@ -238,31 +238,29 @@ header, .features, .gallery, .contact {
 
 .gallery-grid {
     display: grid; /* 使用网格布局 */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 响应式列宽 */
-    gap: 1rem; /* 增加网格项之间的间距 */
+    grid-template-columns: repeat(2, minmax(300px, 1fr)); /* 每行2列，最小宽度300px */
+    gap: 2rem; /* 增加网格项之间的间距 */
     width: 100%; /* 调整宽度以适应屏幕 */
     max-width: 1200px; /* 限制最大宽度 */
-    margin-top: 9rem; /* 向下推内容 */
-    margin-bottom: 2rem; /* 增加内容底部的间距 */
+    margin-top: 5rem; /* 调整顶部间距 */
+    margin-bottom: 2rem; /* 增加底部间距 */
     justify-items: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
 }
 
 .gallery-grid img {
-    width: 100%; /* 图片自适应宽度 */
+    width: 90%; /* 调整图片宽度，接近父容器大小 */
     height: auto;
-    max-width: 300px; /* 限制最大宽度 */
     border-radius: 10px; /* 圆角效果 */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* 增加阴影 */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); /* 增强阴影效果 */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* 添加平滑过渡 */
     cursor: pointer; /* 鼠标悬停变成手势 */
 }
 
 .gallery-grid img:hover {
-    transform: scale(1.05); /* 鼠标悬停放大 */
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.6); /* 鼠标悬停增强阴影 */
+    transform: scale(1.1); /* 鼠标悬停放大 */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.7); /* 鼠标悬停增强阴影 */
 }
-
 
 
 /* Contact Section */
