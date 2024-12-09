@@ -233,7 +233,7 @@ header, .features, .gallery, .contact {
     font-size: 5rem; /* 增加标题字体大小 */
     margin-top: 2rem; /* 设置标题距离顶部的间距 */
     margin-bottom: 3rem; /* 增加标题与内容之间的间距 */
-    color: #d4ccbd;
+    color: #f8c057;
 }
 
 .gallery-grid {
