@@ -1,6 +1,7 @@
 /* Global Styles */
 body {
     margin: 0;
+    min-width: 500px;
     font-family: 'Arial', sans-serif;
     color: #e0e0e0;
     background-color: #1c1c1c;
@@ -28,6 +29,7 @@ header, .features, .gallery, .contact {
     color: #ffffff;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    min-height: 700px;
     height: 70vh;
     overflow: hidden;
     display: flex;
@@ -90,6 +92,7 @@ header, .features, .gallery, .contact {
     padding: 0;
     text-align: center;
     color: #e0e0e0;
+    min-height: 300px;
     height: 30vh;
     display: flex;
     flex-direction: column;
@@ -250,11 +253,25 @@ header, .features, .gallery, .contact {
 
 .gallery-grid img {
     width: 90%; /* 调整图片宽度，接近父容器大小 */
+    max-width: 300px;
     height: auto;
     border-radius: 10px; /* 圆角效果 */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5); /* 增强阴影效果 */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* 添加平滑过渡 */
     cursor: pointer; /* 鼠标悬停变成手势 */
+}
+
+@media (max-width: 500px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* 将每行的网格列数设置为1列 */
+        gap: 1rem; /* 减小网格间距 */
+    }
+
+    .gallery-grid img {
+        width: 90%; /* 调整图片宽度为90%，留出一些边距 */
+        max-width: none; /* 移除最大宽度限制 */
+        margin: 0 auto; /* 图片水平居中 */
+    }
 }
 
 .gallery-grid img:hover {
